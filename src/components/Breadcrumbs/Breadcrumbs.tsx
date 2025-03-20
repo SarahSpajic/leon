@@ -3,8 +3,9 @@
 import Link from "next/link";
 
 import { usePathname } from "next/navigation";
+import { BaseProps } from "../shared/types";
 
-interface BreadcrumbProps {
+interface BreadcrumbProps extends BaseProps {
   homeLabel?: string;
   separator?: React.ReactNode;
   containerClassName?: string;
@@ -15,15 +16,14 @@ interface BreadcrumbProps {
 
 export function BreadCrumbs({
   homeLabel = "Home",
-  //   separator = "/",
+  separator = "/",
   containerClassName = "",
   itemClassName = "",
-}: //   activeItemClassName = "",
-//   labelMapping = {},
-BreadcrumbProps) {
+}: BreadcrumbProps) {
   const pathname = usePathname();
 
-  //   const segments = pathname.split("/").filter((segment) => segment !== "");
+  const segments = pathname.split("/").filter((segment) => segment !== "");
+  console.log(segments, separator);
 
   if (pathname === "/") {
     return null;

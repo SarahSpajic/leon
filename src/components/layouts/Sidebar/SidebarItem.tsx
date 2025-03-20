@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 import { usePathname } from "next/navigation";
-import { BaseProps, LinkProps, IconProps } from "../shared/types";
+import { BaseProps, LinkProps, IconProps } from "../../shared/types";
 
 interface SidebarItemProps extends BaseProps, IconProps, LinkProps {
   badge?: string | number;
@@ -25,13 +25,13 @@ export function SidebarItem({
   const pathname = usePathname();
   const isActive = pathname === href;
 
-  const itemClasses = `sidebar-item ${isActive ? `sidebar-item-active` : ""} ${
+  const itemClasses = `sidebar-item ${isActive ? `sidebar-item--active` : ""} ${
     disabled ? "sidebar-item-disabled" : ""
   } ${className}`;
 
   const itemContent = (
     <>
-      {icon && <span className="sidebar-icon">{icon}</span>}
+      {icon && <span className="sidebar-item--icon">{icon}</span>}
       <span className="sidebar-label">{children}</span>
       {badge && <span className="sidebar-badge">{badge}</span>}
     </>

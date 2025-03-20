@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarSection } from "./SidebarSection";
 import { SidebarItem } from "./SidebarItem";
+import "@/styles/sidebar.scss";
+import "@/styles/sidebar.scss";
 
 interface SidebarProps {
   className?: string;
@@ -36,14 +38,13 @@ export function Sidebar({
         <Link href="/" className="sidebar-logo">
           <h1 className="sidebar-title">Study Hub</h1>
         </Link>
+
         <button
           className="sidebar-toggle"
           onClick={handleToggleCollapse}
           aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
           type="button"
-        >
-          {isCollapsed ? "→" : "←"}
-        </button>
+        ></button>
       </div>
 
       <nav className="sidebar-nav">

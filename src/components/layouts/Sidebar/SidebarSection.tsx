@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BaseProps } from "../shared/types";
+import { BaseProps } from "../../shared/types";
 
 interface SidebarSectionProps extends BaseProps {
   title: string;
